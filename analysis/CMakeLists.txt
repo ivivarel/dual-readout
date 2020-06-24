@@ -56,3 +56,4 @@ foreach(_script ${analysis_SCRIPTS})
 endforeach()
 
 install(TARGETS analysis JER calib DESTINATION bin)
+install(FILES ${headers} DESTINATION include/analysis)

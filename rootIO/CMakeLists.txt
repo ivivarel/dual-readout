@@ -31,3 +31,4 @@ install(
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/librootIO_rdict.pcm ${CMAKE_CURRENT_BINARY_DIR}/librootIO.rootmap DESTINATION lib
 )
+install(FILES ${headers} DESTINATION include/rootIO)

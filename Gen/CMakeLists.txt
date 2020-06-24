@@ -51,3 +51,4 @@ endforeach()
 
 install(TARGETS P8ptcgen P8generic DESTINATION bin)
 install(FILES ${PROJECT_BINARY_DIR}/ptcgun.cmnd ${PROJECT_BINARY_DIR}/generic.cmnd DESTINATION .)
+install(FILES ${headers} DESTINATION include/Gen)

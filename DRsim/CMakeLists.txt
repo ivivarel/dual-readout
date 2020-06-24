@@ -57,3 +57,4 @@ file(COPY ${DRsim_MACROS} DESTINATION ${PROJECT_BINARY_DIR})
 #
 install(TARGETS DRsim DESTINATION bin)
 install(FILES ${DRsim_MACROS} DESTINATION .)
+install(FILES ${headers} DESTINATION include/DRsim)
