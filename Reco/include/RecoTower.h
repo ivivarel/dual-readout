@@ -15,7 +15,7 @@ public:
   RecoTower();
   ~RecoTower();
 
-  void readCSV(std::string filename="calib.csv");
+  bool readCSV(std::string filename="calib.csv");
   void reconstruct(const DRsimInterface::DRsimTowerData& tower, RecoInterface::RecoEventData& evt);
   RecoFiber* getFiber() { return fFiber; }
   RecoInterface::RecoTowerData getTower() { return fData; }

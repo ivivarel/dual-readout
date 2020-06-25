@@ -15,18 +15,23 @@ RecoTower::~RecoTower() {
   if (fFiber) delete fFiber;
 }
 
-void RecoTower::readCSV(std::string filename) {
+bool RecoTower::readCSV(std::string filename) {
   std::ifstream in;
   int i;
   float ceren, scint;
-
+  std::cout << "Opening calibration file " << filename << std::endl;
   in.open(filename,std::ios::in);
+  if (!in.is_open()) {
+    std::cerr << "Cannot find calibration file wil name " << filename << std::endl;
+    return false;
+  }
   while (true) {
     in >> i >> ceren >> scint;
     if (!in.good()) break;
     fCalibs.push_back(std::make_pair(ceren,scint));
   }
   in.close();
+  return true;
 }
 
 void RecoTower::reconstruct(const DRsimInterface::DRsimTowerData& tower, RecoInterface::RecoEventData& evt) {
